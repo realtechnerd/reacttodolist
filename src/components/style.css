@@ -112,3 +112,7 @@ body {
     margin-bottom: 20px;
     display: inline-block;
 }
+#msg {
+    margin-top: 5px;
+    margin-left: 5px;
+}

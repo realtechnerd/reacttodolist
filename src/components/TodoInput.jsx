@@ -7,7 +7,8 @@ class TodoInput extends React.Component {
         super();
         this.state = {
             input: "",
-            tasks: []
+            tasks: [],
+            msg: ""
         }
         this.handleChange = this.handleChange.bind(this);
         this.addTask = this.addTask.bind(this);
@@ -27,6 +28,13 @@ class TodoInput extends React.Component {
     };
 
     addTask() {
+        if (this.state.input == "") {
+            this.setState({
+                msg: "Please input something!"
+            })
+            return false;
+        };
+
         const taskItem = {
             id: Date.now(),
             text: this.state.input.slice()
@@ -101,8 +109,11 @@ class TodoInput extends React.Component {
                                 value={this.state.input}
                                 placeholder="Enter Task.."
                                 onChange={this.handleChange}
-                                required
                             />
+                            <br/>
+                            <div id="msg">
+                                {this.state.msg}
+                            </div>
                             </form>
                             <br/>
                         <button 
