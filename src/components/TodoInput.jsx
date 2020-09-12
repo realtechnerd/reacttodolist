@@ -6,7 +6,7 @@ class TodoInput extends React.Component {
     constructor() {
         super();
         this.state = {
-            input: "",
+            content: "",
             tasks: [],
             msg: ""
         }
@@ -28,7 +28,7 @@ class TodoInput extends React.Component {
     };
 
     addTask() {
-        if (this.state.input == "") {
+        if (this.state.content == "") {
             this.setState({
                 msg: "Please input something!"
             })
@@ -37,7 +37,7 @@ class TodoInput extends React.Component {
 
         const taskItem = {
             id: Date.now(),
-            text: this.state.input.slice()
+            text: this.state.content.slice()
         };
 
         const tasks = [...this.state.tasks]
@@ -48,7 +48,7 @@ class TodoInput extends React.Component {
 
         this.setState({
             tasks: tasks,
-            input: ""
+            content: ""
         });
         
         localStorage.setItem("tasks",JSON.stringify(tasks));
@@ -104,9 +104,9 @@ class TodoInput extends React.Component {
                         <form id="submit" onSubmit={this.addTask} autoComplete="off" required>
                             <input 
                                 type="text"
-                                name="input"
+                                name="content"
                                 id="input"
-                                value={this.state.input}
+                                value={this.state.content}
                                 placeholder="Enter Task.."
                                 onChange={this.handleChange}
                             />
