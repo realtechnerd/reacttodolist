@@ -27,7 +27,7 @@ class TodoInput extends React.Component {
         })
     };
 
-    addTask() {
+    addTask(e) {
         if (this.state.content == "") {
             this.setState({
                 msg: "Please input something!"
@@ -53,6 +53,8 @@ class TodoInput extends React.Component {
         
         localStorage.setItem("tasks",JSON.stringify(tasks));
         localStorage.setItem("newItem", "")
+        
+        e.preventDefault();
     }
     deleteTask(id) {
         const tasks = [...this.state.tasks];
