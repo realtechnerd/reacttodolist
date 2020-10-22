@@ -88,6 +88,7 @@ class TodoInput extends React.Component {
           }
         }
       }
+    
     render() { 
         const task = this.state.tasks.map(task => {
             return(

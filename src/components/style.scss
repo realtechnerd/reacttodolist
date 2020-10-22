@@ -7,21 +7,16 @@ body {
 }
 .Header {
     background: linear-gradient(to right, #ff416c, #ff4b2b);
-    padding: 5px;
     color: #fff;
     font-family: Inter;
+    color: #fff;
+    text-align: center;
+    padding: 0.25px;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
 }
 .Header h1 {
-    display: inline-block;
-    padding: 5px;
-}
-.Header a {
-    display: inline-block;
-    padding: 5px;
-    color: #fff !important;
-    text-decoration: none;
+    text-align: center;
 }
 .MainContent {
     padding: 10px;
