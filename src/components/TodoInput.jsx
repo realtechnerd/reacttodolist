@@ -125,6 +125,8 @@ class TodoInput extends React.Component {
                             />
                             <br/>
                             <br/>
+                            <p id="due">Due:</p>
+                            <br/>
                             <input 
                                 type="date"
                                 name="date"
