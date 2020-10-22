@@ -50,6 +50,7 @@ body {
   font-size: 15pt;
   border: none;
   background-color: #d3d3d3;
+  width: 90%;
 }
 
 .container {
@@ -111,6 +112,10 @@ body {
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .Item:hover {
@@ -135,5 +140,12 @@ body {
 #msg {
   margin-top: 5px;
   margin-left: 5px;
+}
+
+#e {
+  margin-bottom: 5px !important;
+  margin-top: 5px !important;
+  font-weight: 400;
+  font-family: Inter;
 }
 /*# sourceMappingURL=style.css.map */

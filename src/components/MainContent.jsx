@@ -6,7 +6,7 @@ class MainContent extends React.Component {
     render() { 
         return ( 
             <div className="MainContent">
-                <TodoInput/>
+                <TodoInput key="1"/>
             </div>
          );
     }

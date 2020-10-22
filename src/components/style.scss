@@ -42,6 +42,7 @@ body {
     font-size: 15pt;
     border: none;
     background-color: #d3d3d3;
+    width: 90%;
 }
 .container {
     margin-left: 25%;
@@ -96,6 +97,7 @@ body {
     margin-top: 15px;
     cursor: pointer;
     transition: 0.2s;
+    user-select: none;
 }
 .Item:hover {
     background-color: lightcoral;
@@ -114,4 +116,10 @@ body {
 #msg {
     margin-top: 5px;
     margin-left: 5px;
+}
+#e {
+    margin-bottom: 5px !important;
+    margin-top: 5px !important;
+    font-weight: 400;
+    font-family: Inter;
 }

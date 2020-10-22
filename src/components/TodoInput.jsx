@@ -8,7 +8,8 @@ class TodoInput extends React.Component {
         this.state = {
             content: "",
             tasks: [],
-            msg: ""
+            msg: "",
+            date: ""
         }
         this.handleChange = this.handleChange.bind(this);
         this.addTask = this.addTask.bind(this);
@@ -28,6 +29,12 @@ class TodoInput extends React.Component {
     };
 
     addTask(e) {
+        if (this.state.date === "") {
+            this.setState({
+                date: "No Due Date Set"
+            })
+        }
+        console.log(this.state.date);
         if (this.state.content == "") {
             this.setState({
                 msg: "Please input something!"
@@ -37,7 +44,8 @@ class TodoInput extends React.Component {
 
         const taskItem = {
             id: Date.now(),
-            text: this.state.content.slice()
+            text: this.state.content.slice(),
+            date: this.state.date
         };
 
         const tasks = [...this.state.tasks]
@@ -48,8 +56,10 @@ class TodoInput extends React.Component {
 
         this.setState({
             tasks: tasks,
-            content: ""
+            content: "",
+            date: ""
         });
+
         
         localStorage.setItem("tasks",JSON.stringify(tasks));
         localStorage.setItem("newItem", "")
@@ -81,11 +91,11 @@ class TodoInput extends React.Component {
             try {
               value = JSON.parse(value);
               this.setState({ [key]: value });
-              console.log('intry')
+              console.log('Success')
             } catch (e) {
               // handle empty string
               this.setState({ [key]: value });
-              console.log('incatch')
+              console.log('Unsuccessful')
             }
           }
         }
@@ -94,8 +104,8 @@ class TodoInput extends React.Component {
     render() { 
         const task = this.state.tasks.map(task => {
             return(
-                <div>
-                    <Item key={task.id} text={task.text} delete={() => this.deleteTask(task.id)}/>
+                <div key={task.id}>
+                    <Item key={task.id} text={task.text} date={task.date} id={task.id} delete={() => this.deleteTask(task.id)}/>
                 </div>
             )
         })
@@ -114,6 +124,14 @@ class TodoInput extends React.Component {
                                 onChange={this.handleChange}
                             />
                             <br/>
+                            <br/>
+                            <input 
+                                type="date"
+                                name="date"
+                                id="input"
+                                value={this.state.date}
+                                onChange={this.handleChange}
+                            />
                             <div id="msg">
                                 {this.state.msg}
                             </div>
