@@ -157,4 +157,28 @@ body {
 .v {
   color: grey;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+  }
+  .TodoInput {
+    background-color: #333;
+    color: #fff;
+  }
+  #input {
+    background-color: #000;
+    color: #fff;
+  }
+  .Header h1 {
+    color: #333;
+  }
+  .Item {
+    background-color: #333;
+    color: #fff;
+  }
+  .Item:hover {
+    background-color: #1c1c1c;
+  }
+}
 /*# sourceMappingURL=style.css.map */
