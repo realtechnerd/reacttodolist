@@ -1,7 +1,6 @@
-{
+  {
     "name": "TaskBuddy",
     "short_name": "TaskBuddy",
-    "display": "standalone",
     "icons": [
       {
         "src": "favicon.ico",
@@ -18,6 +17,10 @@
         "type": "image/png",
         "sizes": "512x512"
       }
-    ]
+    ],
+    "display": "standalone",
+    "background_color": "#f1f1f1",
+    "theme_color": "#f1f1f1",
+    "orientation": "any",
+    "start_url": "/"
   }
-  

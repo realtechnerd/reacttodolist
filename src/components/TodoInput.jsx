@@ -47,6 +47,14 @@ class TodoInput extends React.Component {
             text: this.state.content.slice(),
             date: this.state.date
         };
+        //const n = new Notification(`A new task has been created!`);
+//
+        //document.addEventListener('visibilitychange', function() {
+        //    if (document.visibilityState === 'visible') {
+        //      // The tab has become visible so clear the now-stale Notification.
+        //      n.close();
+        //    }
+        //  });
 
         const tasks = [...this.state.tasks]
 
@@ -77,6 +85,9 @@ class TodoInput extends React.Component {
 
     componentDidMount() {
         this.hydrateStateWithLocalStorage();
+        Notification.requestPermission().then(function(result) {
+            console.log(result);
+        })
     }  
     
     hydrateStateWithLocalStorage() {
